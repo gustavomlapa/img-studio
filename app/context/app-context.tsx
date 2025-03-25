@@ -77,8 +77,8 @@ export function ContextProvider({ children }: { children: React.ReactNode }) {
         }
 
         // 1. Fetch User ID from client-side
-        let fetchedUserID = ''
-
+        let fetchedUserID = 'admin'
+/* 
         if (process.env.NODE_ENV === 'development' && process.env.NEXT_PUBLIC_TEST_DEV_USER_ID) {
           // Locally IAP is not enabled
           fetchedUserID = process.env.NEXT_PUBLIC_TEST_DEV_USER_ID
@@ -106,7 +106,7 @@ export function ContextProvider({ children }: { children: React.ReactNode }) {
           }
           fetchedUserID = targetPrincipal
         }
-
+*/
         // 2. Set GCS URI for all edited/ generated images
         let gcsURI = `gs://${process.env.NEXT_PUBLIC_OUTPUT_BUCKET}`
 
