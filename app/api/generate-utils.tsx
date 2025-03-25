@@ -86,11 +86,11 @@ export const GenerateImageFormFields = {
         label: 'Imagen 3',
         indication: 'High performance model version',
       },
-      {
+      /*{
         value: 'imagen-3.0-fast-generate-001',
         label: 'Imagen 3 - Fast',
         indication: 'Low latency model version',
-      },
+      },*/
     ],
     isDataResetable: false,
     isFullPromptAdditionalField: false,
