@@ -46,6 +46,8 @@ export async function rewriteWithGemini(userPrompt: string) {
   const projectId = process.env.NEXT_PUBLIC_PROJECT_ID
   const vertexAI = new VertexAI({ project: projectId, location: location })
 
+  console.log("passou aqui no rewriteWithGemini")
+
   const generativeModel = vertexAI.getGenerativeModel({
     model: geminiModel,
   })
@@ -69,6 +71,7 @@ export async function rewriteWithGemini(userPrompt: string) {
 
     return newPrompt
   } catch (error) {
+    console.log("erro no rewriteWithGemini: "+error)
     console.error(error)
     return {
       error: 'Error while rewriting prompt with Gemini.',
