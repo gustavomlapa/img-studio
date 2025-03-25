@@ -73,6 +73,8 @@ function normalizeSentence(sentence: string) {
 async function generatePrompt(formData: GenerateImageFormI, isGeminiRewrite: boolean, references: ReferenceObjectI[]) {
   let fullPrompt = formData['prompt']
 
+  console.log("passou aqui no imagen-generatePrompt com variavel isGeminiRewrite="+isGeminiRewrite)
+  
   // Rewrite the content of the prompt
   if (isGeminiRewrite) {
     try {
@@ -80,6 +82,8 @@ async function generatePrompt(formData: GenerateImageFormI, isGeminiRewrite: boo
 
       if (typeof geminiReturnedPrompt === 'object' && 'error' in geminiReturnedPrompt) {
         const errorMsg = cleanResult(JSON.stringify(geminiReturnedPrompt['error']).replaceAll('Error: ', ''))
+        console.log("este no loop com erro:"+errorMsg)
+
         throw Error(errorMsg)
       } else fullPrompt = geminiReturnedPrompt as string
     } catch (error) {
